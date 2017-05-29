@@ -14,6 +14,11 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print('BASE_DIR: ', BASE_DIR)
+
+# os.path.join을 사용해서 TEMPLATE_DIR 변수에 django_app/templates 경로를 할당
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+print('TEMPLATE_DIR: ', TEMPLATE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,10 +36,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.admin',   # 어드민 사이트 구성
+    'django.contrib.auth',    # 어드민 사이트 구성 - 로그인 인증
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    'django.contrib.sessions',   # 어드민 사이트 구성 - 로그인 유지
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
@@ -55,7 +60,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR], # 템플릿의 경로를 넣어 장고가 알 수 있게 해준다
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
