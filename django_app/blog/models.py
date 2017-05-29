@@ -18,7 +18,7 @@ class Post(models.Model):  # models모듈 안에 Model 클래스를 상속받는
     )
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.published_date = timezone.now()   # 발행시간을 현재시각으로 정해주고 저장하는 메소드
         self.save()
 
     def __str__(self):
