@@ -1,0 +1,26 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css'">
+        <link href='http://fonts.googleapis.com/css?family=Nunito&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <title>RE Django Girls Blog</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1><a href="{% url 'post_list' %}">Django Girls Blog</a></h1>
+                <h3>{{ title }}</h3>
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

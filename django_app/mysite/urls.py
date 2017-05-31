@@ -19,5 +19,8 @@ from blog import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.post_list),   # 127.0.0.1:8000 url에만 적용
+    url(r'^$', views.post_list, name='post_list'),
+    # 127.0.0.1:8000 url에만 적용
+    url(r'^(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
+    url(r'post/create/$', views.post_create, name='post_create')
 ]
